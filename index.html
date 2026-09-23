@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Você ❤️</title>
+  <title>Feliz Aniversário, Meu Amor ❤️</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
       align-items: center;
       overflow-x: hidden;
       color: #fff;
-      padding: 20px;
+      padding: 24px 16px;
       position: relative;
     }
 
@@ -56,7 +56,7 @@
       }
     }
 
-    /* Tela de Boas-vindas (para liberar áudio no mobile) */
+    /* Tela de Toque Inicial */
     #start-screen {
       position: fixed;
       inset: 0;
@@ -68,6 +68,7 @@
       gap: 18px;
       z-index: 20;
       transition: opacity 0.8s ease, visibility 0.8s ease;
+      padding: 20px;
     }
 
     #start-screen.hidden {
@@ -79,7 +80,7 @@
       background: linear-gradient(135deg, #e84393, #d63031);
       color: white;
       border: none;
-      padding: 14px 32px;
+      padding: 14px 34px;
       border-radius: 999px;
       font-size: 1rem;
       font-weight: 500;
@@ -101,16 +102,17 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 24px;
-      padding: 28px 24px;
-      max-width: 480px;
+      padding: 28px 20px;
+      max-width: 520px;
       width: 100%;
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
       text-align: center;
+      margin: auto;
     }
 
     .tag-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       margin-bottom: 20px;
       color: #ff99bb;
       letter-spacing: 0.5px;
@@ -160,14 +162,14 @@
     /* Caixa da Mensagem Typewriter */
     .message-box {
       font-size: 0.95rem;
-      line-height: 1.7;
-      min-height: 140px;
+      line-height: 1.8;
       text-align: left;
       color: #eaeaea;
       background: rgba(255, 255, 255, 0.03);
       border-radius: 16px;
-      padding: 18px;
+      padding: 20px 18px;
       white-space: pre-wrap;
+      word-break: break-word;
     }
 
     .cursor {
@@ -190,6 +192,7 @@
       font-style: italic;
       text-align: right;
       color: #ff99bb;
+      font-size: 1.1rem;
       opacity: 0;
       transition: opacity 1.2s ease;
     }
@@ -199,20 +202,20 @@
 
   <!-- Tela de Toque Inicial -->
   <div id="start-screen">
-    <div style="font-size: 2.8rem;">💌</div>
+    <div style="font-size: 3rem;">💌</div>
     <p style="font-size: 0.95rem; color: #ddd; max-width: 280px; text-align: center;">
-      Preparei um recado especial para você...
+      Preparei algo especial para o seu dia...
     </p>
     <button class="start-btn" id="open-btn">Abrir Mensagem</button>
   </div>
 
   <!-- Cartão de Leitura -->
   <div class="container">
-    <div class="tag-title">Nossa História</div>
+    <div class="tag-title">Feliz Aniversário! ✨</div>
 
     <!-- Bloco Contador -->
     <div class="counter-wrapper">
-      <div class="counter-label">Juntos a exatamente</div>
+      <div class="counter-label">Juntos há exatamente</div>
       <div class="timer-grid">
         <div class="time-unit">
           <span id="days">0</span>
@@ -240,26 +243,32 @@
     </div>
   </div>
 
-  <!-- Trilha Sonora (Substitua o src pelo link direto de um MP3) -->
+  <!-- Trilha Sonora -->
   <audio id="bg-audio" loop preload="auto">
     <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112199.mp3" type="audio/mpeg">
   </audio>
 
   <script>
     // -------------------------------------------------------------
-    // 1. CONFIGURAÇÃO DA DATA DE INÍCIO DO NAMORO
-    // Formato: ANO, MÊS (0 a 11 - ex: 0=Janeiro, 2=Março), DIA, HORA, MIN
+    // DATA DE INÍCIO DO NAMORO: 18 de Abril de 2026
+    // Mês 3 = Abril (0-indexed: 0=Jan, 1=Fev, 2=Mar, 3=Abr...)
     // -------------------------------------------------------------
-    const startDate = new Date(2023, 5, 12, 20, 0, 0); // Ajuste para a data real de vocês
+    const startDate = new Date(2026, 3, 18, 0, 0, 0);
 
     // -------------------------------------------------------------
-    // 2. TEXTO DA CARTA (Edite com sua mensagem real)
+    // TEXTO DA CARTA
     // -------------------------------------------------------------
-    const message = `Cada segundo ao seu lado se tornou meu momento favorito do dia.
+    const message = `Feliz aniversário, meu amor!
 
-Obrigado por ser minha parceira, por cada risada compartilhada e por deixar a vida muito mais leve e cheia de significado.
+Hoje o dia é todo seu, mas eu não canso de pensar no quanto eu sou o maior vencedor dessa história. Desde o exato dia em que te conheci, eu já fiquei completamente apaixonado por você. E, a cada dia que passa, essa certeza só cresce.
 
-Esse pequeno contador lá em cima é só o começo de uma história inteira que ainda vamos construir juntos.`;
+O que mais me encanta em você é a sua parceria. Eu admiro muito o jeito que você me apoia em tudo e a forma linda como você faz de tudo para sermos felizes. Você é o meu porto seguro. Na verdade, eu amo cada detalhe seu, até mesmo o seu ronco que no fundo só me lembra do privilégio que é poder dormir e acordar ao seu lado.
+
+Hoje, o meu maior desejo para você é que a vida te devolva em dobro toda a alegria que você me traz. Que a gente continue construindo a nossa história para, logo logo, estarmos morando juntos, casados e viajando por aí, colecionando o mundo lado a lado.
+
+Obrigado por ser essa mulher incrível. Que o seu novo ciclo seja brilhante e que você se sinta a pessoa mais amada do mundo, hoje e sempre.
+
+Te amo!`;
 
     // Lógica do Contador
     function updateCounter() {
@@ -291,8 +300,15 @@ Esse pequeno contador lá em cima é só o começo de uma história inteira que 
       if (charIndex < message.length) {
         textTarget.textContent += message.charAt(charIndex);
         charIndex++;
-        // Variação orgânica na digitação
-        const delay = message.charAt(charIndex - 1) === '.' ? 350 : 38;
+
+        const currentChar = message.charAt(charIndex - 1);
+        let delay = 32;
+
+        if (currentChar === '.') delay = 320;
+        else if (currentChar === '!') delay = 380;
+        else if (currentChar === ',') delay = 180;
+        else if (currentChar === '\n') delay = 420;
+
         setTimeout(typeWriter, delay);
       } else {
         document.getElementById('cursor').style.display = 'none';
@@ -308,11 +324,9 @@ Esse pequeno contador lá em cima é só o começo de uma história inteira que 
     openBtn.addEventListener('click', () => {
       startScreen.classList.add('hidden');
       
-      // Inicia o áudio com volume suave
       audio.volume = 0.5;
       audio.play().catch(() => {});
 
-      // Inicia a escrita após a tela sumir
       setTimeout(typeWriter, 500);
     });
 
@@ -320,18 +334,9 @@ Esse pequeno contador lá em cima é só o começo de uma história inteira que 
     function createHeart() {
       const heart = document.createElement('div');
       heart.className = 'heart-particle';
-      heart.innerHTML = '♥';
-      heart.style.left = Math.random() * 95 + 'vw';
-      heart.style.animationDuration = Math.random() * 3 + 5 + 's';
-      heart.style.fontSize = Math.random() * 12 + 12 + 'px';
-      document.body.appendChild(heart);
+      heart.Calculando a partir de **18 de abril de 2026** até hoje (**23 de setembro de 2026**):
 
-      setTimeout(() => {
-        heart.remove();
-      }, 7000);
-    }
+* **Meses e dias corridos:** 5 meses e 5 dias
+* **Total em dias:** 158 dias
 
-    setInterval(createHeart, 600);
-  </script>
-</body>
-</html>
+Se você estiver integrando isso em algum código, widget ou texto específico, me avise o formato exato que deseja atualizar!
